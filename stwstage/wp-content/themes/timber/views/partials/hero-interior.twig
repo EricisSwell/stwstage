@@ -1,0 +1,62 @@
+{% set post_hero = post.get_thumbnail.get_src|resize(1600, 800) %}
+{% set post_hero_sm = post.get_thumbnail.get_src|resize(800, 400) %}
+
+{% set post_social %}
+    <a class="qs-link"
+        data-qs-service="twitter"
+        data-qs-title="{{ post.title }}"
+        data-qs-url="{{ post.permalink }}"
+        data-qs-via-username="{{ gv.twitter_id }}"
+        >
+        <i class="fa fa-twitter"></i>
+    </a>
+    <a class="qs-link"
+        data-qs-service="facebook-share"
+        data-qs-title="{{ post.title }}"
+        data-qs-url="{{ post.permalink }}"
+    >
+        <i class="fa fa-facebook"></i>
+    </a>
+{% endset %}
+
+{% if post_hero %}
+    <div class="post-hero" style="background-image: url('{{ post_hero }}');">
+        <img class="visible-xs mobile-hero" src="{{ post_hero_sm }}">
+        <div class="post-title-container">
+            {% if post.category %}
+                <h4 class="category">{{ post.category }}</h4>
+            {% endif %}
+            <h1 class="post-title">{{ post.post_title }}</h1>
+            {% if post.subheading %}
+                <h2 class="post-subheading">{{ post.subheading }}</h2>
+            {% endif %}
+            {% if post.field_57d1ac4e829e2 %}
+            	<h3 class="tile-sub-page">{{ post.field_57d1ac4e829e2 }}</h3>
+            {% endif %}            
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-5 social-block">
+                {{ post_social }}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="static-post-title">
+        {% if post.category %}
+            <h4 class="category">{{ post.category }}</h4>
+        {% endif %}
+        <h1 class="post-title">{{ post.post_title }}</h1>
+        {% if post.subheading %}
+            <h2 class="post-subheading">{{ post.subheading }}</h2>
+        {% endif %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-5 social-block">
+                    {{ post_social }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

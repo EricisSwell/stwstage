@@ -1,0 +1,51 @@
+.topics-sidebar {
+    padding: 20px 20px 20px 20px;
+    background: $white;
+    border: 2px solid $gray;
+    border-top-color: $black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    h1 {
+        color: $purple;
+        font-weight: 500;
+        text-align: center;
+        display: block;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .form-control {
+        width: 100%;
+        font-family: $font-sans;
+        padding: 5px;
+        &::-webkit-input-placeholder {
+            color: $gray;
+            font-weight: 300;
+        }
+    }
+    .btn {
+        background: $white;
+        border: 1px solid $white;
+        border-top: 2px solid $gray;
+        color: $purple;
+        font-family: $font-sans;
+        text-transform: uppercase;
+        padding-top: 20px;
+        font-size: 12px;
+        width: 180px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        outline: none;
+        margin-top: 10px;
+        &:focus {
+            border-color: $yellow;
+            transition: .5s ease all;
+        }
+        &:hover {
+            color: $yellow;
+            transition: .5s ease all;
+        }
+    }
+}

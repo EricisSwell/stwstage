@@ -1,0 +1,20 @@
+.btn {
+    color: #FFF;
+    font-weight: 800;
+    font-family: $font-sans;
+    text-transform: uppercase;
+    border-radius: 0;
+    &:hover {
+        transition: .5s ease all;
+    }
+    &.-primary {
+        background: $purple;
+        border-color: $purple;
+        &:hover {
+            background: $lpurple;
+        }
+    }
+    &.-btn-block {
+        width: 100%;
+    }
+}

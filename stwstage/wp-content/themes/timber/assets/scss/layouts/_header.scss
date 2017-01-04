@@ -1,0 +1,213 @@
+header {
+	background: $white;
+    min-height: 70px;
+    @include sm-and-up {
+        height: 70px + 4px; // header + border
+        &.stuck {
+            position: fixed;
+            z-index: 900;
+            width: 100%;
+        }
+    }
+}
+
+.sticky-wrapper {
+    @include xs {
+        height: auto !important;
+    }
+}
+.header-nav {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+
+    a {
+        color: $white;
+        text-decoration: none;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.navbar-default {
+    width: 100%;
+	min-height: 70px;
+	background: $white;
+	margin-bottom: 0px;
+	border: 2px solid $gray;
+	background-image: url('../img/header-mountains.png');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+
+		.navbar-toggle {
+			float: left;
+			padding: 24px;
+			background: $white;
+			border-radius: 0px;
+			margin: 0px;
+			height: 70px;
+			box-sizing: border-box;
+			border: 0px;
+			border-right: 2px solid $gray;
+			&:hover, &:active, &:focus {
+				transition: .5s ease all;
+				background: $ygray;
+			}
+		}
+		.bar-thin {
+			width: 20px;
+			height: 2px;
+			margin-top: 4px;
+			margin-bottom: 4px;
+			background: $purple;
+			display: block;
+		}
+		.btn-search {
+			font-size: 22px;
+			padding: 15px;
+			height: 70px;
+			width: 70px;
+			text-align: center;
+		}
+}
+.site-title {
+	width: 340px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 28px;
+	padding-top: 15px;
+	a:hover {
+		text-decoration: none;
+	}
+}
+.navbar-collapse {
+    overflow-y: visible;
+    position: absolute;
+    z-index: 99999;
+    background: $purple;
+    margin-left: -2px;
+    margin-right: 0;
+    transition: 1s ease all;
+    width: calc(100% + 4px);
+    border-bottom: 1px solid $white;
+
+    &.collapsing {
+        transition: none;
+        * {
+            display: none;
+        }
+    }
+}
+.social-menu {
+	border-left: 2px solid $gray;
+    float: right;
+    height: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    li {
+    	display: inline-block;
+    }
+    .navbar-social > li > a {
+    	color: $purple;
+    	font-size: 22px;
+    	padding: 15px 20px 20px 15px;
+    	&:hover {
+    		color: $lpurple;
+    		transition: .5s ease all;
+    	}
+    }
+}
+.explore-top-nav {
+	color: $white;
+	padding-bottom: 80px;
+	transition: none;
+
+	ul, li {
+		list-style-type: none;
+		padding-left: 0px;
+		margin-left: 0px;
+		margin-bottom: 0px;
+	}
+	.explore-heading {
+		color: $yellow;
+	}
+	.explore-item, .explore-item-right {
+		text-transform: uppercase;
+		font-family: $font-sans;
+		background: $white;
+		font-weight: 800;
+		border-top: 6px solid $white;
+		&:hover {
+			transition: .5s ease all;
+			text-decoration: none;
+			background: #ebe3e3;
+			border-top: 6px solid $yellow;
+		}
+	}
+}
+.search-collapse {
+    overflow-y: visible;
+    position: absolute;
+    z-index: 99999;
+    background: $purple;
+    width: calc(100% + 4px);
+    margin-top: 3px;
+    margin-left: -2px;
+    .search-box {
+    	padding: 40px;
+    	text-align: center;
+    	border-radius: 0px;
+
+    }
+   	h3.search-heading {
+		color: $yellow;
+		padding-bottom: 10px;
+	}
+	input[type="text"].search-field {
+		width: 100%;
+		font-size: 24px;
+		padding: 28px;
+		color: $purple;
+		border-radius: 0px;
+	}
+	.form-group {
+		width: 100%;
+	}
+	.btn-primary {
+		background: $yellow;
+		color: $purple;
+		border-color: $yellow;
+		font-size: 20px;
+		padding: 14px;
+		border-radius: 0px;
+		width: 80px;
+		text-align: center;
+		&:hover {
+			background: $ydark;
+			transition: .5s ease all;
+		}
+	}
+}
+@include xs {
+    .navbar-default {
+    	.navbar-toggle {
+    		border-right: 0px;
+    	}
+    	.site-title {
+    		display: inline-block;
+    		border-top: 2px solid $gray;
+    		width: 100%;
+    		padding-bottom: 12px;
+    	}
+    	.social-menu {
+    		padding-left: 40px;
+    		padding-right: 40px;
+    	}
+    }
+}

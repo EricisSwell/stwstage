@@ -1,0 +1,79 @@
+// Post Template Styles
+h2.post-subheading {
+	font-size: 22px;
+}
+.single-content {
+	padding-top: 80px;
+}
+.single-4 {
+	margin-top: 20px;
+}
+.post-hero {
+	padding-bottom: 50%; // 2:1 ratio on iamage
+	background-size: cover;
+    background-position: center;
+	position: relative;
+    @include xs {
+        padding-bottom: 0;
+        background: none;
+    }
+}
+.post-title-container {
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	background: #FFF;
+	width: 600px;
+	margin-left: -300px;
+	padding: 25px 50px;
+	text-align: center;
+    @include xs {
+        position: relative;
+    }
+	h4 {
+		font-family: $font-sans;
+		color: $yellow;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+}
+.static-post-title {
+	margin-left: auto;
+	margin-right: auto;
+	bottom: 0px;
+	background: $ygray;
+	padding: 25px 0px;
+	text-align: center;
+	h4 {
+		font-family: $font-sans;
+		color: $yellow;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+}
+.social-block {
+	margin-top: 20px;
+	padding-top: 30px;
+	text-align: center;
+	border-top: 3px solid $gray;
+	a {
+		font-size: 24px;
+		padding-left: 20px;
+		padding-right: 20px;
+		&:hover {
+			color: $yellow;
+			transition: .5s ease all;
+			text-decoration: none;
+		}
+	}
+}
+.post-content {
+	color: $purple;
+}
+@include xs {
+	.post-title-container {
+		width: 100%;
+		margin-left: 0px;
+		left: 0px;
+	}
+}

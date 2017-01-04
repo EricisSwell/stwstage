@@ -1,0 +1,19 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+<article class="entry-list entry-list-inverse">
+    <div class="words">
+        <div class="col-sm-6">
+        <div class="post-date">{{ post.date }}</div>
+        {% if post.get_thumbnail %}
+            <a href="{{ post.permalink }}"><img class="feature-image" src="{{ post.get_thumbnail.get_src|resize(1000) }}" /></a>
+        {% endif %}
+        </div>
+        <div class="col-sm-6">
+        <h4 class="category">{{ post.category }}</h4>
+        <h2 class="featured-smaller"><a href="{{ post.permalink }}">{{ post.post_title }}</a></h2>
+        <a class="btn btn-read-more">Read More</a>
+        </div>
+    </div>
+</article>
+{% endblock %}

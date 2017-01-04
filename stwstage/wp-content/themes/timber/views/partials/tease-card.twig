@@ -1,0 +1,10 @@
+<div class="col-sm-3">
+    <div class="tease-card">
+        {% if post.headshot %}
+            <a href="{{ post.permalink }}"><img class="feature-image" src="{{ TimberImage( post.headshot ).get_src|resize(300,300)}}" alt="" /></a>
+        {% else %}
+            <a href="{{ post.permalink }}"><img class="feature-image" src="{{ img_dir }}/spacer.png" width="300" alt="" /></a>
+        {% endif %}
+        <span class="card-name"><a href="{{ post.permalink }}">{{ post.post_title }}</a></span>
+    </div>
+</div>

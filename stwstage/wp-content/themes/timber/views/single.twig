@@ -1,0 +1,34 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    {% include "partials/hero-interior.twig" %}
+
+    <div class="container">
+        <div class="row page-container">
+            <div class="col-sm-8 content page single-content">
+                <article class="post" id="post-{{ post.ID }}">
+                    <div class="post-content">
+                        {{ post.get_content }}
+                    </div>
+                </article>
+            </div>
+        <div class="col-sm-4 single-4">
+            {% if post.sidebar_featured_posts %}
+                {% for id in post.sidebar_featured_posts %}
+                    {% set sidebar_post = TimberPost(id) %}
+                    {% if sidebar_post %}
+                        {% include "partials/sidebar-post.twig" %}
+                    {% else %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% for sidebar_post in related_articles_default|slice(0,3) %}
+                    {% include "partials/sidebar-post.twig" %}
+                {% endfor %}
+            {% endif %}
+            {% include "partials/sidebar-newsletter.twig" %}
+            {% include "partials/sidebar-topics.twig" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

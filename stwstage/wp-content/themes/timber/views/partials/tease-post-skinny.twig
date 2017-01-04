@@ -1,0 +1,16 @@
+<article class="entry-list">
+    <div class="words">
+        <div class="post-date">{{ post.date }}</div>
+        {% if post.get_thumbnail %}
+            <a href="{{ post.permalink }}"><img class="feature-image" src="{{ post.get_thumbnail.get_src|resize(1000,500) }}" /></a>
+        {% endif %}
+        {% for category in post.categories|slice(0,1) %}
+            <h4 class="category"><a href="{{ category.get_path }}">{{ category.name }}</a></h4>
+        {% endfor %}
+        <h2><a href="{{ post.permalink }}">{{ post.post_title }}</a></h2>
+        {% if post.subheading %}
+        <h3 class="tile-sub"><a href="{{ post.permalink }}">{{ post.subheading }}</a></h3>
+        {% endif %}
+        <a href="{{ post.permalink }}" class="btn btn-read-more">Read More</a>
+    </div>
+</article>

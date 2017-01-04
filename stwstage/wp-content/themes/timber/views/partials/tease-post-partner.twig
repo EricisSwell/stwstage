@@ -1,0 +1,16 @@
+<div class="sponsored-block partners-block">
+    <article class="entry-list">
+        <span class="partners-title">From our Partners</span>
+        {% if post.get_thumbnail %}
+            <img class="feature-image" src="{{ post.get_thumbnail.get_src|resize(300,300) }}" />
+        {% endif %}
+        {% for category in post.categories|slice(0,1) %}
+            <h4 class="category"><a href="{{ category.get_path }}">{{ category.name }}</a></h4>
+        {% endfor %}
+        <h2 class="sponsored-title"><a href="{{ post.permalink }}">{{ post.post_title }}</a></h2>
+        {% if post.subheading %}
+        <h3 class="tile-sub"><a href="{{ post.permalink }}">{{ post.subheading }}</a></h3>
+        {% endif %}
+        <a href="{{ post.permalink }}" class="btn btn-read-more">Go To Article</a>
+    </article>
+</div>

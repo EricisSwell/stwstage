@@ -1,0 +1,41 @@
+.tease-partner {
+    text-align: center;
+
+    .inverse & {
+        background: $white;
+    }
+
+    img {
+        width: auto;
+        max-width: 200px;
+        margin-bottom: 10px;
+        border-radius: 100%;
+        border: 8px solid $lpurple;
+        &:hover {
+            border: 8px solid $yellow;
+            transition: .5s ease all;
+        }
+    }
+
+    .partner-name a:link, a:active, a:visited {
+        color: $white;
+        font-family: $font-sans;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-style: 11px;
+        display: inline-block;
+        text-align: center;
+        display: block;
+    }
+}
+
+.partners-index {
+    padding-top: 40px;
+    .tease-partner {
+        margin-bottom: 40px;
+    }
+
+    .partner-name a:link, a:active, a:visited {
+        color: $purple;
+    }
+}

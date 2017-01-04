@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <div class="archive-header">
+        {% include "partials/explore-topics.twig" %}
+    </div>
+    <div class="archive-container container">
+        <div class="row page-container">
+            <div class="col-sm-8">
+                {% for post in posts %}
+                    {% include "partials/tease-post.twig" with {'template': 'archive'} %}
+                {% endfor %}
+            </div>
+            <div class="col-sm-4">
+
+                {% for post in sponsored %}
+                    <div class="sponsored-block">
+                        {% include "partials/tease-post-sponsored.twig" with {'template': 'archive'} %}
+                    </div>
+                {% endfor %}
+
+                {% include "partials/sidebar-newsletter.twig" %}
+                {% include "partials/sidebar-topics.twig" %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {% include "partials/archive-pagination.twig" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<article class="entry-list">
+    <span class="sponsored-by">Sponsored By:</span> <span class="sponsor">{{ post.sponsored_by }}</span>
+    {% if post.get_thumbnail %}
+        <a href="{{ post.permalink }}"><img class="feature-image" src="{{ post.get_thumbnail.get_src|resize(800,400) }}" /></a>
+    {% endif %}
+    <h4 class="category">{{ post.category }}</h4>
+    <h2 class="sponsored-title"><a href="{{ post.permalink }}">{{ post.post_title }}</a></h2>
+    {% if post.subheading %}
+    <h3 class="tile-sub"><a href="{{ post.permalink }}">{{ post.subheading }}</a></h3>
+    {% endif %}
+    <a href="{{ post.permalink }}" class="btn btn-read-more">Read More</a>
+</article>

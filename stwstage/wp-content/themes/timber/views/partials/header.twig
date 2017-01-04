@@ -1,0 +1,61 @@
+<header class="js-header">
+    <nav class="navbar navbar-default {{ nav_classes }}">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                    <span class="bar-thin"></span>
+                    <span class="bar-thin"></span>
+                    <span class="bar-thin"></span>
+            </button>
+            <button type="button" class="navbar-toggle btn-search" data-toggle="collapse" data-target=".search-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-search"></i>
+            </button>
+            <div class="social-menu">
+                <ul class="nav navbar-nav navbar-social">
+                    {% for item in social_menu.get_items %}
+                        <li class="{{ item.classes | join(' ') }}">
+                            <a href="{{ item.get_link }}" target="_blank">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="site-title"><a href="{{ site.url }}"><img src="http://www.savingthewest.org/wp-content/themes/timber/static/img/stw-logo.png" alt="Saving the West" /></a></div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="header-nav list-inline text-center">
+                            {% for item in header_menu.get_items %}
+                                <li class="{{ item.classes | join(' ') }}">
+                                    <a href="{{ item.get_link }}">{{ item.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.navbar-collapse -->
+        <div class="collapse search-collapse">
+            <div class="container search-box">
+                <div class="row">
+                    <h3 class="search-heading">Search</h3>
+                    <form class="form-inline form-search" action="/" method="get">
+                        <div class="col-sm-7 col-sm-offset-2">
+                            <input type="text" name="s" placeholder="Search" class="form-control search-field">
+                        </div>
+                        <div class="col-sm-1">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<a id="beta" href="http://www.savingthewest.org/beta-feedback/" style="background: url('http://www.savingthewest.org/wp-content/uploads/2016/08/beta.png') no-repeat ; background-size: 100% auto; height: auto; padding: 10% 0; position: absolute; right: 0; max-height: 120px; max-width: 120px; width: 20%; z-index: 9;"></a>

@@ -1,0 +1,19 @@
+<div class="sponsored-block">
+    <article class="entry-list">
+        {% if sidebar_post.get_terms('highlight')|first.slug == "from-our-partners" %}
+            <span class="partners-title">From our Partners</span>
+        {% endif %}
+        {% if sidebar_post.sponsored_by %}
+            <span class="sponsored-by">Sponsored By:</span> <span class="sponsor">{{ sidebar_post.sponsored_by }}</span>
+        {% endif %}
+            {% if sidebar_post.get_thumbnail %}
+                <a href="{{ sidebar_post.permalink }}"><img class="feature-image" src="{{ sidebar_post.get_thumbnail.get_src|resize(800,400) }}" /></a>
+            {% endif %}
+            <h4 class="category">{{ sidebar_post.category }}</h4>
+            <h2 class="sponsored-title"><a href="{{ sidebar_post.permalink }}">{{ sidebar_post.post_title }}</a></h2>
+            {% if sidebar_post.subheading %}
+            <h3 class="tile-sub"><a href="{{ sidebar_post.permalink }}">{{ sidebar_post.subheading }}</a></h3>
+            {% endif %}
+            <a href="{{ sidebar_post.permalink }}" class="btn btn-read-more">Read More</a>
+    </article>
+</div>

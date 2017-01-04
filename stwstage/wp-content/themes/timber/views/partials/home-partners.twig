@@ -1,0 +1,17 @@
+<section class="partners">
+    <div class="container">
+        <div class="row content">
+            <h3 class="partners-heading">Meet our Partners</h3>
+            {% for post in partners %}
+                <div class="col-sm-3 hp-partner">
+                    {% if post.headshot %}
+                        <a href="{{ post.permalink }}"><img class="feature-image" src="{{ TimberImage( post.headshot ).get_src|resize(300,300)}}" alt="" /></a>
+                    {% else %}
+                        <a href="{{ post.permalink }}"><img class="feature-image" src="{{ img_dir }}/spacer.png" width="300" alt="" /></a>
+                    {% endif %}
+                    <span class="partner-name"><a href="{{ post.permalink }}">{{ post.post_title }}</a></span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+<div class="topics-sidebar">
+    <h1>Explore by Topic</h1>
+    <select class="js-jump-menu form-control">
+        <option value="" selected>Show me more...</option>
+        {% for item in topics_menu.get_items %}
+            <option value="{{ item.get_link }}">{{ item.title }}</option>
+        {% endfor %}
+    </select>
+    {# <button class="btn">
+        Go
+    </button> #}
+</div>

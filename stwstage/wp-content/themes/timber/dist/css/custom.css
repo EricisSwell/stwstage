@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* Custom Stylesheet */
+
+.single-cards .post-hero {
+    padding: 80px 0;
+    background-size: 100% auto;
+    background-position: 50%;
+    position: relative;
+    background-repeat: no-repeat;
+    }
+
+.single-cards .cardindex {
+	background: #ffffff;
+}
+
+.single-cards .cardcontent {
+	background: #ffffff;
+	padding-top: 20px;
+	padding: 20px;
+}

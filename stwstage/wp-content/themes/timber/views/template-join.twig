@@ -1,0 +1,100 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+{% include "partials/hero-home.twig" %}
+
+<section class="hp-latest entry-list">
+    <div class="container">
+        <div class="row content">
+            <div class="col-sm-8">
+                <h3 class="page-title">Latest</h3>
+                {% for post in posts|slice(0,1) %}
+                    <article class="entry-list">
+                        <div class="words">
+                            <div class="post-date">{{ post.date }}</div>
+                            {% if post.get_thumbnail %}
+                                <a href="{{ post.permalink }}"><img class="feature-image" src="{{ post.get_thumbnail.get_src|resize(1000, 500) }}" /></a>
+                            {% endif %}
+                            {% for category in post.categories|slice(0,1) %}
+                                <h4 class="category"><a href="{{ category.get_path }}">{{ category.name }}</a></h4>
+                            {% endfor %}
+                            <h2 class="featured"><a href="{{ post.permalink }}">{{ post.post_title }}</a></h2>
+                            {% if post.subheading %}
+                            <h3 class="tile-sub"><a href="{{ post.permalink }}">{{ post.subheading }}</a></h3>
+                            {% endif %}
+                            <a href="{{ post.permalink }}" class="btn btn-read-more">Read More</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+            <div class="col-sm-4">
+                {% for post in sponsored|slice(0,1) %}
+                    <div class="sponsored-block">
+                        {% include "partials/tease-post-sponsored.twig" with {'template': 'archive'} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row content">
+            {% for post in posts|slice(1,3) %}
+                <div class="col-sm-4">
+                    {% include "partials/tease-post-skinny.twig" %}
+                </div>
+            {% endfor %}
+        </div>
+</section>
+
+<section class="home-topics">
+    {% include "partials/explore-topics.twig" %}
+</section>
+
+<section class="hp-posts-inverse inverse">
+    <div class="container">
+        <div class="row content">
+            {% for post in posts|slice(4,2) %}
+                <div class="col-sm-4">
+                    {% include "partials/tease-post-skinny.twig" %}
+                </div>
+            {% endfor %}
+            {% for post in partner_posts|slice(0,1) %}
+                <div class="col-sm-4">
+                    {% include "partials/tease-post-partner.twig" %}
+                </div>
+            {% endfor %}
+        </div>
+        {% for post in posts|slice(6,4) %}
+            {% include "partials/tease-post.twig" %}
+        {% endfor %}
+        {# Since we're showing 10 posts on the first page, link to page 2 if there are 11 posts #}
+        {% if posts|length > 10 %}
+            <div class="row home-more">
+                <div class="col-xs-12 text-center">
+                    <a href="/blog/page/2/" class="btn btn-primary">More Posts</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="partners home-partners">
+    <div class="container">
+        <div class="row content">
+            <div class="col-xs-12">
+                <h3 class="partners-heading text-center">Featured Partners</h3>
+            </div>
+        </div>
+        {% for row in partners|batch(4) %}
+            <div class="row">
+                {% for post in row %}
+                    {% include "partials/tease-partner.twig" %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% include "partials/home-video-block.twig" with {"post": post } %}
+
+{% endblock %}

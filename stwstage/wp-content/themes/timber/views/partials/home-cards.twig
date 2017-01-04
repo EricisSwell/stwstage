@@ -1,0 +1,17 @@
+<section class="cards">
+    <div class="container">
+        <div class="row content">
+            <h3 class="cards-heading">Meet our Partners</h3>
+            {% for post in cards %}
+                <div class="col-sm-3 hp-card">
+                    {% if post.headshot %}
+                        <a href="{{ post.permalink }}"><img class="feature-image" src="{{ TimberImage( post.headshot ).get_src|resize(300,300)}}" alt="" /></a>
+                    {% else %}
+                        <a href="{{ post.permalink }}"><img class="feature-image" src="{{ img_dir }}/spacer.png" width="300" alt="" /></a>
+                    {% endif %}
+                    <span class="card-name"><a href="{{ post.permalink }}">{{ post.post_title }}</a></span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

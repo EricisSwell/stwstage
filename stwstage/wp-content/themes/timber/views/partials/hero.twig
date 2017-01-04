@@ -1,0 +1,32 @@
+{% set post_hero = hero.get_thumbnail.get_src|resize(1400, 800) %}
+{% set post_hero_sm = hero.get_thumbnail.get_src|resize(700, 400) %}
+    {% set show_overlay = true %}
+    <div class="hero-container {{ hero_classes }} {{ "hero-" ~ hero_type }}" {% if post.hidden_hero == true %}style="display: none;"{% endif %}>
+        <style>
+            .bg-img-{{ hero.id }} { background-image: url('{{ post_hero_sm }}') }
+            @media (min-width: 768px) {
+                .bg-img-{{ hero.id }} { background-image: url('{{ post_hero }}') }
+            }
+        </style>
+        <div class="hero bg-img bg-img-{{ hero.id }}"></div>
+        {% if show_overlay %}
+            <div class="hero-title">
+                <div class="container">
+                    <div class="row">
+                        <div class="hp-hero-title">
+                            <h2><span>{{ title ?: hero.headline }}</span></h2>
+                            <span class="cta"><a class="cta-link" href="{{ hero.cta_link }}">{{ hero.cta }}</a></span>
+                            {% if hero.subhead %}
+                                <div class="subhead">
+                                    {{ hero.subhead|wpautop }}
+                                </div>
+                            {% endif %} 
+                        </div>
+                        <div class="img-mountains"></div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <h1 class="text-hide">{{ post.title ?: title }}</h1>
+        {% endif %}
+    </div>

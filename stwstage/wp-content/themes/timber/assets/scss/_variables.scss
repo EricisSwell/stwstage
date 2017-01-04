@@ -1,0 +1,39 @@
+// layout
+$section-spacing: 60px;
+$section-spacing-mobile: 30px;
+
+// type
+$font-sans: "sofia-pro","Helvetica",Helvetica,arial,sans-serif;
+$font-serif: "matrix-ii",serif;
+$font-thin: 300;
+
+// colors
+$white:     #FFFFFF;
+$black:     #000000;
+$purple: 	#3a333e;
+$lpurple:	#554a5b;
+$gray:  	#e8e3e3;
+$yellow:	#fccb32;
+$ygray: 	#f9f8f4;
+$green:		#004e32;
+$ydark:		#cea62b;
+
+$color-email: #138bfd;
+$color-facebook: #316298;
+$color-twitter: #36c5f0;
+
+//
+// bootstrap vars -- customize bootstrap here, leave vendor files untouched
+//
+// Always Collapse Menu
+$grid-float-breakpoint:     5000px;
+
+$font-family-sans-serif:    $font-sans;
+$font-family-serif:         $font-serif;
+$font-family-base:          $font-serif;
+$brand-primary:             $purple;
+$text-color:                $purple;
+$link-color:                $purple;
+$grid-gutter-width:         30px;
+$screen-lg:                 1360px;
+$input-border-radius:       0px;

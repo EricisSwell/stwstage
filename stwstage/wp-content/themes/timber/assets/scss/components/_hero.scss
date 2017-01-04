@@ -1,0 +1,92 @@
+.hero-container {
+    height: auto;
+    position: relative;
+    overflow: hidden;
+
+    @include sm-and-up {
+        max-height: 90vh;
+    }
+
+    .hero {
+        height: auto;
+        @include sm-and-up {
+            background-repeat: no-repeat;
+            background-position-y: -60px;
+            background-size: cover;
+            margin-bottom: 0;
+            height: 0;
+            width: 100%;
+            padding-bottom: 30%;
+            min-height: 800px;
+        }
+
+    }
+    .hero-title {
+                color: $white;
+                padding-top: 10px;
+                width: 100%;
+                margin-top: 0;
+                h2 {
+                    font-size: 46px;
+                    text-align: center;
+                }
+                @include sm-and-up {
+                    position: absolute;
+                    bottom: 0;
+                }
+    }
+    .hp-hero-title {
+        max-width: 660px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+    .img-mountains {
+        background: url('http://savingthewest.wpengine.com/wp-content/uploads/2016/07/hero-mountains.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: -20px;
+    }
+    .cta {
+        display: block;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 16px;
+        a.cta-link {
+            font-family: $font-sans;
+            color: $yellow;
+            font-weight: 700;
+        }
+    }
+}
+@include xs {
+    .hero-container {
+        height: auto;
+        .bg-img {
+            background-image: url("http://savingthewest.wpengine.com/wp-content/uploads/2016/07/hero1-700x400-c-default.jpg");
+            background-size: cover;
+            background-position-x: -170px;
+            min-height: 500px;
+            overflow: auto;
+            display: block;
+            background-repeat: no-repeat;
+        }
+        .hero-title {
+            margin-top: -200px;
+            padding: 40px;
+            background: $purple;
+            h2 {
+                font-size: 28px;
+            }
+        }
+    }
+    .hero {
+        height: auto;
+        @include sm-and-up {
+            margin-top: -200px;
+        }
+
+    }
+}

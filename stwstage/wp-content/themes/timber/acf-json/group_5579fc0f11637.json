@@ -1,0 +1,95 @@
+{
+    "key": "group_5579fc0f11637",
+    "title": "Hero Options",
+    "fields": [
+        {
+            "key": "field_5579fc1c8600a",
+            "label": "Serif Page Heading",
+            "name": "serif_page_heading",
+            "type": "true_false",
+            "instructions": "Check this box to use a small, serif-font page header instead of the default brush font.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_557a0d89fc10b",
+            "label": "Hide Hero",
+            "name": "hidden_hero",
+            "type": "true_false",
+            "instructions": "Check this box to hide the hero and page heading altogether.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_56902b299e752",
+            "label": "Smaller Hero",
+            "name": "smaller_hero",
+            "type": "true_false",
+            "instructions": "Do you want the hero constrained to the page container?  If so, it should be 1800px wide by 600px tall.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_57644262f45d8",
+            "label": "Short but Full Hero",
+            "name": "short_fluid_hero",
+            "type": "true_false",
+            "instructions": "Use a wide aspect ratio image. <em>Note: be sure and only check one of this or smaller hero.<\/em>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-flex.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1466189229
+}

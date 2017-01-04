@@ -1,0 +1,228 @@
+.hp-latest {
+	padding-top: 70px;
+	h3.page-title {
+		font-size: 30px;
+	}
+}
+// Entries
+article.entry-list {
+	margin-top: 40px;
+	.post-date {
+		background: $yellow;
+		font-family: $font-sans;
+		color: $white;
+		text-align: center;
+		width: 100px;
+		font-size: 15px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		left: 50%;
+		margin-left: -50px;
+		position: absolute;
+	}
+	.feature-image {
+		padding-bottom: 25px;
+	}
+	h4.category {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 13px;
+		font-family: $font-sans;
+	}
+	h2.featured {
+		font-family: $font-serif;
+		font-size: 36px;
+		padding-right: 20px;
+		line-height: 1.4;
+	}
+	h3.tile-sub {
+		font-size: 20px;
+		font-style: italic;
+	}
+	h2 {
+		font-family: $font-serif;
+		font-size: 30px;
+		padding-right: 20px;
+		line-height: 1.4;
+	}
+	a.btn-read-more {
+		color: $purple;
+		font-family: $font-sans;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		font-size: 1.3rem;
+		padding-left: 0px;
+		border-top: 2px solid $gray;
+		margin-top: 20px;
+		padding-top: 15px;
+		padding-right: 30px;
+		display: block;
+		max-width: 140px;
+		text-align: left;
+		&::before {
+			font-family: "FontAwesome";
+			content: "\f054";
+			font-size: .99rem;
+			padding-right: 3px;
+		}
+		&:hover {
+			color: $lpurple;
+			transition: .5s ease all;
+		}
+	}
+}
+.content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+// Inverse color tiles
+.hp-posts-inverse {
+    background: $ygray;
+}
+
+// Meet our Partners
+.home-partners {
+	background: $purple;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	box-sizing: border-box;
+	height: auto;
+
+	.partners-heading {
+		color: $white;
+		font-size: 36px;
+        margin-bottom: 20px;
+	}
+}
+
+h2.featured-smaller {
+	font-size: 18px;
+}
+.entry-list-inverse {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: auto;
+}
+
+.home-more {
+    margin-bottom: 30px;
+}
+
+// Homepage Sign Up
+.hp-signup-bar {
+	background: $yellow;
+	position: absolute;
+	margin-top: -50px;
+	left: 10%;
+	right: 10%;
+	width: 80%;
+	.title-container {
+		padding: 40px;
+		font-size: 24px;
+		text-align: center;
+        @include sm-and-up {
+            border-right: 2px solid $ydark;
+        }
+	}
+
+    form {
+        padding-top: 50px;
+        .email {
+            padding: 9px 10px;
+            font-size: 20px;
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+            @include sm-and-up {
+                width: calc(100% - 140px - 10px - 4px); // width minus button width, spacing, border
+                margin-right: 10px;
+            }
+    	}
+
+        .btn {
+            padding: 14px 10px 15px;
+            @include sm-and-up {
+                width: 140px;
+                position: relative;
+                top: -2px;
+            }
+        }
+    }
+}
+// Video Block
+section.hp-video-block {
+		a:hover .play-circle {
+		text-decoration: none;
+		border-color: $yellow;
+		transition: .5s ease all;
+		color: $yellow;
+		outline: none;
+	}
+	a:active, a:focus, a:hover {
+		color: $white;
+		transition: .5s ease all;
+		text-decoration: none;
+		outline: none;
+	}
+	height: 550px;
+	background-size: cover;
+	.video-info {
+		display: block;
+		margin-top: 235px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 400px;
+		color: $white;
+		text-align: center;
+		h3 {
+			font-family: $font-sans;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 16px;
+		}
+		.video-title {
+			font-size: 30px;
+		}
+		.play-circle {
+			border-radius: 30px;
+			width: 55px;
+			height: 55px;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 28px;
+			border: 5px solid #FFF;
+			padding-left: 6px;
+			padding-top: 3px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}
+@include xs {
+	.nav-footer {
+		padding-left: 30px;
+		padding-bottom: 40px;
+	}
+	.hp-signup-bar .title-container {
+		padding-bottom: 0px;
+	}
+	.hp-signup-bar .col-sm-9 input[type="email"] {
+		margin-top: 15px;
+	}
+	.hp-signup-bar .col-sm-9 input[type="submit"] {
+		margin-top: 15px;
+		margin-bottom: 35px;
+	}
+	.text-right {
+	    text-align: left;
+	    padding-top: 20px;
+	}
+	.nav-footer .footer-nav-space {
+		margin-top: 0px;
+	}
+	section.hp-video-block .video-info {
+		margin-top: 300px;
+	}
+}

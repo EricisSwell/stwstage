@@ -1,0 +1,21 @@
+<section class="explore-topics">
+    <div class="container explore-container">
+        <div class="row content">
+            <div class="col-xs-12">
+                <h3 class="explore-heading">Explore by Topic</h3>
+                <div class="explore-topics-menu">
+                    {% for row in topics_menu.get_items|batch(3) %}
+                        <div class="row">
+                            {% for item in row %}
+                                <div class="col-sm-4">
+                                    <div class="item">
+                                        <a href="{{ item.get_link }}" class="explore-item {{ item.classes | join(' ') }}">{{ item.title }}</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</section>
